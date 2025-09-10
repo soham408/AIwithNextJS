@@ -83,11 +83,43 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
-      <div 
+
+      <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        fontSize: "32px",
+        fontWeight: "bold",
+        color: "#ccc7c7ff",
+        textAlign: "left",
+        textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)",
+        position: "absolute",
+        top: "0",
+        left: "0",
+        margin: "20px"
+      }}
+      >
+        <h1>Gemini</h1>
+        <div
+        style={{
+        fontSize: "15px",
+        padding: "6px 24px",
+            backgroundColor: "#FE7743",
+            color: "#070202ff",
+            border: "none",
+            borderRadius: "18px",
+            fontWeight: "bold",
+            cursor: "pointer",
+            margin: "15px",
+      }}
+        >2.5-flash</div>
+      </div>
+
+      <div
       style={{
         fontSize: "32px",
         fontWeight: "bold",
-        color: "#333",
+        color: "#9c8b8bff",
         textAlign: "center",
         textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)"
       }}
@@ -104,29 +136,32 @@ export default function Home() {
             marginBottom: "20px",
             border: "1px solid #ccc",
             borderRadius: "8px",
-            backgroundColor: "#fefefe",
+            backgroundColor: "#0f0606",
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
             whiteSpace: "pre-wrap",
             fontSize: "14px",
-            color: "#333",
-            lineHeight: "1.5",
+            color: "#f7ebebff",
+            lineHeight: "2.5",
             fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
             transition: "box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out",
           }}
+
+          onFocus={(e) => e.target.style.borderColor = "#007BFF"}
+          onBlur={(e) => e.target.style.borderColor = "#ccc"}
         >
           {streamResponse}
           {response}
-        
+       
         </div>
 
         <textarea
           id="textArea"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="Enter your message"
+          placeholder="Enter your prompt"
           rows={4}
           style={{
-            color: "#020100ff",
+            color: "#eee6deff",
             width: "900px",
             padding: "12px 16px",
             borderRadius: "8px",
@@ -218,7 +253,7 @@ export default function Home() {
 
            
           > Clear
-          
+         
         </button>
 
       </div>
